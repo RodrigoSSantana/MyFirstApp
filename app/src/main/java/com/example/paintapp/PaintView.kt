@@ -13,13 +13,13 @@ import android.view.ViewGroup
 import com.example.paintapp.MainActivity.Companion.paintBrush
 import com.example.paintapp.MainActivity.Companion.path
 
-class PaintView:View {
+class PaintView: View {
     var params : ViewGroup.LayoutParams? = null
 
     companion object {
         var pathlist = ArrayList<Path>()
         var colorList = ArrayList<Int>()
-        var currentBrush = Color.BLACK
+        var currentBrush = Color.BLACK;
     }
 
 
@@ -40,7 +40,7 @@ init()
         paintBrush.color = currentBrush
         paintBrush.style = Paint.Style.STROKE
         paintBrush.strokeJoin = Paint.Join.ROUND
-        paintBrush.strokeWidth = 8f
+        paintBrush.strokeWidth = 8f;
 
         params = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
     }

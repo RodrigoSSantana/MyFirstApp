@@ -5,11 +5,13 @@ import android.graphics.Paint
 import android.graphics.Path
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.CalendarContract.Colors
 import android.widget.ImageButton
 import android.widget.Toast
 import com.example.paintapp.PaintView.Companion.colorList
 import com.example.paintapp.PaintView.Companion.currentBrush
 import com.example.paintapp.PaintView.Companion.pathlist
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         var paintBrush = Paint ()
 
     }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val blackBtn = findViewById<ImageButton>(R.id.blackColor)
         val eraserBtn = findViewById<ImageButton>(R.id.whiteColor)
 
-        redBtn.setOnClickListener{
+        redBtn.setOnClickListener {
     Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
             paintBrush.color = Color.RED
             currentColor(paintBrush.color)
@@ -53,7 +54,8 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    private fun currentColor(color : Int) {
+
+    private fun currentColor(color: Int) {
         currentBrush = color
         path = Path()
 
